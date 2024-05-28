@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
@@ -6,7 +10,6 @@
 
 body {
   font-family: "Poppins", sans-serif;
-
   margin: 0;
 }
 
@@ -18,49 +21,57 @@ body {
   padding-left: 16px;
 }
 
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 header.navbar-container {
   width: 100%;
   padding-left: 50px;
   padding-right: 50px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   top: 0;
   background-color: white;
-
   position: fixed;
   z-index: 9999;
+
+  animation: slideDown 0.5s ease-out;
 }
 
 header.navbar-container .logo p {
   font-size: 1.5rem;
   font-weight: 700;
   color: #958e0f;
+}
 
-}.hamburger {
+.hamburger {
   display: none;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 .hamburger div {
   width: 25px;
-  height: 3px;
+  height: 2.5px;
   background-color: black;
   margin: 4px 0;
 }
 
 .nav-list {
   display: flex;
-
 }
 
 .nav-list.active {
-  display: flex; 
+  display: block;
 }
-
 
 @media (max-width: 768px) {
   .hamburger {
@@ -68,9 +79,54 @@ header.navbar-container .logo p {
   }
   .nav-list {
     display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: center;
   }
-}
+  .nav-list ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-list ul li {
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 1rem;
+  }
 
+  main .content .hero .content-hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  main .content .about .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-aside {
+    width: 100%;
+  }
+
+  .profile-picture {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  main .content .about .social-media {
+    justify-content: center;
+  }
+
+}
 
 @media (min-width: 769px) {
   .hamburger {
@@ -83,7 +139,6 @@ header.navbar-container .logo p {
 
 header.navbar-container .nav-list ul {
   padding-left: 0;
-
   display: flex;
   justify-content: center;
   gap: 2rem 1rem;
@@ -95,12 +150,10 @@ header.navbar-container .nav-list li {
 
 header.navbar-container .nav-list a {
   padding: 0.5rem 1rem;
-
   text-decoration: none;
   font-size: 1.05rem;
   font-weight: 500;
   color: black;
-
   transition: all 0.2s ease-in-out;
 }
 
@@ -110,21 +163,17 @@ header.navbar-container .nav-list li:hover a {
 
 main {
   flex: 1;
-
   display: flex;
+  flex-direction: column;
   margin: 2.5rem;
 }
 
 main .content .hero {
   padding-top: 9.5rem;
-
 }
 
 main .content .hero .content-hero {
   display: flex;
-
-  justify-content: space-between;
-  align-items: flex-start;
   gap: 2rem;
 }
 
@@ -135,7 +184,6 @@ main .content .hero .content-hero {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .profile-picture {
@@ -145,15 +193,14 @@ main .content .hero .content-hero {
   border-radius: 50%;
 }
 
-.hero-description, .profile-picture {
+.hero-description,
+.profile-picture {
   flex: 1;
 }
-
 
 main .content .hero .hero-description h2 {
   font-size: 1.5rem;
   font-weight: 500;
-
   color: rgb(202, 184, 112);
   margin-bottom: 0;
 }
@@ -161,7 +208,6 @@ main .content .hero .hero-description h2 {
 main .content .hero .hero-description .name {
   font-size: 2.5rem;
   font-weight: 700;
-
   color: #171717;
   margin: 0;
 }
@@ -185,8 +231,6 @@ main .content .about h2 {
 main .content .about .about-content {
   display: flex;
   justify-content: space-between;
-
-  align-items: flex-start;
   gap: 2rem;
 }
 
@@ -197,7 +241,6 @@ main .content .about .about-right {
 
 main .content .about .social-media {
   display: flex;
-
   gap: 1.5rem;
 }
 
@@ -205,13 +248,11 @@ main .content .about .social-media a {
   border: 1px solid #b5c2c5;
   border-radius: 999px;
   display: flex;
-
   text-decoration: none;
   width: 40px;
   height: 40px;
   align-items: center;
   justify-content: center;
-
   color: rgb(202, 184, 112);
 }
 
@@ -219,7 +260,6 @@ main .content .about .social-media a:hover {
   border: 1px solid #b5c2c5;
   border-radius: 999px;
   display: flex;
-
   background-color: rgb(202, 184, 112);
   color: white;
 }
@@ -236,7 +276,6 @@ main .content .portfolio .portfolio-content {
 main .content .portfolio .title {
   font-size: 20px;
   font-weight: 600;
-
   color: rgb(202, 184, 112);
   text-align: center;
 }
@@ -260,20 +299,28 @@ main .content .portfolio .portfolio-item {
 }
 
 main .content .portfolio .portfolio-item img {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 10px;
 }
 
-footer {
-  background-color: #262626;
-  margin: 0;
-  padding: 2rem 0;
+main .content .portfolio .portfolio-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-footer{
+main .content .portfolio a {
+  text-decoration: none;
+  color: black;
+}
+
+footer {
+  background-color: #1e293b;
+  margin: 0;
+  padding: 2rem 0;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
+  color: white;
 }
