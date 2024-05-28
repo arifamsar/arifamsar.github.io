@@ -1,0 +1,279 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+
+header.navbar-container {
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  top: 0;
+  background-color: white;
+
+  position: fixed;
+  z-index: 9999;
+}
+
+header.navbar-container .logo p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #958e0f;
+
+}.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 4px 0;
+}
+
+.nav-list {
+  display: flex;
+
+}
+
+.nav-list.active {
+  display: flex; 
+}
+
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-list {
+    display: none;
+  }
+}
+
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+  .nav-list {
+    display: flex;
+  }
+}
+
+header.navbar-container .nav-list ul {
+  padding-left: 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 2rem 1rem;
+}
+
+header.navbar-container .nav-list li {
+  list-style-type: none;
+}
+
+header.navbar-container .nav-list a {
+  padding: 0.5rem 1rem;
+
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: black;
+
+  transition: all 0.2s ease-in-out;
+}
+
+header.navbar-container .nav-list li:hover a {
+  color: #958e0f;
+}
+
+main {
+  flex: 1;
+
+  display: flex;
+  margin: 2.5rem;
+}
+
+main .content .hero {
+  padding-top: 9.5rem;
+
+}
+
+main .content .hero .content-hero {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.hero-aside {
+  height: 300px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.profile-picture {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.hero-description, .profile-picture {
+  flex: 1;
+}
+
+
+main .content .hero .hero-description h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  color: rgb(202, 184, 112);
+  margin-bottom: 0;
+}
+
+main .content .hero .hero-description .name {
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  color: #171717;
+  margin: 0;
+}
+
+main .content .hero .hero-description p {
+  color: #262626;
+}
+
+main .content .about {
+  padding-top: 9.5rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+main .content .about h2 {
+  font-weight: 600;
+  font-size: medium;
+  color: rgb(202, 184, 112);
+}
+
+main .content .about .about-content {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+main .content .about .about-left,
+main .content .about .about-right {
+  flex: 1;
+}
+
+main .content .about .social-media {
+  display: flex;
+
+  gap: 1.5rem;
+}
+
+main .content .about .social-media a {
+  border: 1px solid #b5c2c5;
+  border-radius: 999px;
+  display: flex;
+
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+
+  color: rgb(202, 184, 112);
+}
+
+main .content .about .social-media a:hover {
+  border: 1px solid #b5c2c5;
+  border-radius: 999px;
+  display: flex;
+
+  background-color: rgb(202, 184, 112);
+  color: white;
+}
+
+main .content .portfolio {
+  padding-top: 8.5rem;
+  margin-top: 5rem;
+}
+
+main .content .portfolio .portfolio-content {
+  width: 100%;
+}
+
+main .content .portfolio .title {
+  font-size: 20px;
+  font-weight: 600;
+
+  color: rgb(202, 184, 112);
+  text-align: center;
+}
+
+main .content .portfolio .description-portfolio {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+main .content .portfolio .portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+main .content .portfolio .portfolio-item {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+main .content .portfolio .portfolio-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #262626;
+  margin: 0;
+  padding: 2rem 0;
+}
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
